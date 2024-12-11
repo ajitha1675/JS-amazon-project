@@ -61,7 +61,7 @@ products.forEach((product) => {
    .forEach((button)=> {
     button.addEventListener('click', ()=> {
         const productName = button.dataset.productName;
-
+        // addto
         let matchingItem;
 
         cart.forEach((item) => {
@@ -78,7 +78,18 @@ products.forEach((product) => {
             quantity: 1
           });
         }
-       
+
+        let cartQuantity = 0;
+
+
+        cart.forEach((item) =>{
+             cartQuantity += item.quantity;  
+        });
+
+        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
+        
+        console.log(cartQuantity);
         console.log(cart);
         
     })
